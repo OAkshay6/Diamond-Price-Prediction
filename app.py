@@ -18,8 +18,6 @@ def load_model():
         return pickle.load(f)
 
 
-model=load_model()
-
 
 
 # ------- App title----------
@@ -44,6 +42,9 @@ depth = st.number_input("Depth in mm",value=5.7)
 #-----Prediction-----------
 
 if st.button("Predict price 💸"):
+
+    model=load_model()
+    
     input_df=pd.DataFrame([{
         "carat":carat,
         "cut":cut,
